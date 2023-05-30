@@ -1,30 +1,30 @@
 <script>
-	export let name;
-</script>
+	import Grid from "gridjs-svelte"
+  
+	const data = [
+		
+		{name: "vicky", email: "vicky@gmail.com", city:"NewYork" },
+		{name: "vicky drawn", email: "vicky02@gmail.com", city:"Sydney" },
+		{name: "daniel", email: "danielvicky@gmail.com", city:"Manchester" },
+		{name: "John Doe", email: "john@gmail.com", city:"NewYork" },
+		{name: "Jane Smith", email: "jane@gmail.com", city:"London" },
+		{name: "Bob Johnson", email: "bob.john@gmail.com", city:"NewYork" },
+		{name: "Vicky Vikram", email: "vicky.viki@gmail.com", city:"NewYork" },
+		{name: "Boby", email: "boby123@gmail.com", city:"Melborne" },
+		{name: "Daniel Brown", email: "brown@gmail.com", city:"Washington" }
+]
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
+  </script>
+  
+  <Grid 
+  sort
+  search 
+  filter
+  
+  data={data}/>
+  
+  <style global>
+	@import "https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css";
+  </style>
 
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-</style>
+<!-- pagination={{ enabled: true, limit: 5 }} -->
